@@ -1,0 +1,102 @@
+
+
+
+
+
+[
+    {
+      "id": "scam_loss_over_10000",
+      "question": "Did you lose over $3,500 as a result of a scam?",
+      "type": "image-choice",
+      "options": [
+        { "label": "Yes", "image": "../assets/yes.png" },
+        { "label": "No", "image": "../assets/no.png" }
+      ]
+    },
+    {
+      "id": "scam_loss_amount",
+      "question": "How much money did you lose as a result of a scam in US Dollars ($)?",
+      "description": "A rough figure is fine.",
+      "type": "text"
+    },
+    {
+      "id": "scam_type",
+      "question": "What type of scam was it?",
+      "description": "If you're not sure, then just select 'Other'. Scroll down for options.",
+      "type": "multiple-choice",
+      "options": [
+        "Investment Scam",
+        "Romance Scam",
+        "Online Shopping Scam",
+        "Invoice Scam",
+        "Job 'task' Scam",
+        "Crypto Scam",
+        "'Safe Account' Scam (fake bank, tax office impersonation)",
+        "Purchase Scam (goods or services)",
+        "Other"
+      ]
+    },
+    {
+      "id": "uk_bank_involved",
+      "question": "Was there a bank involved in any part of the payment process?",
+      "description": "For example, you sent money from or to a bank account.",
+      "type": "multiple-choice",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "id": "payment_method",
+      "question": "How did you pay the fraudsters?",
+      "description": "Please select any of the options below.",
+      "type": "multiple-choice",
+      "options": [
+        "Bank transfer(s) (branch, app or online banking)",
+        "Card payment(s)",
+        "International payment system - like Wise, Moneygram, Western Union",
+        "Crypto transfer to a wallet (e.g. Coinbase, Binance, Kraken)",
+        "Other"
+      ]
+    },
+    {
+      "id": "sending_bank",
+      "question": "Which bank(s) did you send the money from?",
+      "description": "e.g. Natwest, Santander, HSBC",
+      "type": "text"
+    },
+    {
+      "id": "incident_summary",
+      "question": "Tell us what happened",
+      "description": "A 1 or 2 sentence summary is fine.",
+      "type": "text"
+    },
+    {
+      "id": "incident_date",
+      "question": "When did this happen?",
+      "description": "This doesn't need to be an exact date, but the more accurate the better.",
+      "type": "date"
+    },
+    {
+      "id": "first_name",
+      "question": "Your first name",
+      "type": "text"
+    },
+    {
+      "id": "surname",
+      "question": "Your surname",
+      "type": "text"
+    },
+    {
+      "id": "email",
+      "question": "Your email",
+      "type": "email"
+    },
+    {
+      "id": "phone",
+      "question": "Your phone number",
+      "description": "Enter your phone number with dailing code. Example USA - +1(203)224-7788",
+      "type": "text"
+    }
+  ]
+  

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Preload Google Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      />
+    </noscript>
+
+    <meta name="theme-color" content="#021BAB" />
+    <meta name="robots" content="index, follow" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Default SEO (overridden per-route by react-helmet via src/components/SEO.js) -->
+    <title>Somygo | Immigration Consulting for Individuals & Families</title>
+    <meta
+      name="description"
+      content="Practical immigration consulting for work, study, family, residency, and investor visas. London and New York offices serving clients worldwide."
+    />
+
+    <!-- Flutterwave Inline Script -->
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+  </head>
+  <body>
+    <noscript>
+      Somygo is an immigration consulting practice for individuals and families.
+      We help with work, study, family, residency, and investor visas across the
+      UK, US, Canada, EU, Australia, and UAE. JavaScript is required for the
+      full experience, please enable it or contact us at info@somygo.com.
+    </noscript>
+    <div id="root"></div>
+
+    <!--
+      Hidden Netlify Forms registration. Netlify's form-detection bot scans
+      this static HTML at build time. The actual form lives in the React
+      Contact page (src/pages/Contact.js) and POSTs to "/" with form-name
+      "contact". Field names must match exactly.
+    -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="country" />
+      <input type="text" name="service" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "How fast can we start, and what happens first?",
+    "answer": [
+      "We acknowledge your intake within 24–72 hours. Urgent cases are triaged the same day where possible.",
+      "Typical first-week flow:",
+      "• Day 0–1: Intake review and a quick eligibility screen for your goal (work, study, family, permanent residence, investor, visit).",
+      "• Day 1–3: Strategy call and a written plan that covers route selection, document list, fees, timeline, and key risks.",
+      "• Day 2–7: Document pack kickoff with templates for letters and statements, guidance on financial evidence, and instructions for translations or apostille.",
+      "After this, we complete forms, run quality checks, submit your application, book biometrics or appointments, prepare you for any interview, and track the file to decision."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "Which countries do you support, and what is in scope versus out of scope?",
+    "answer": [
+      "Primary destinations: United States, Canada, United Kingdom, the European Union, Australia, and the UAE. Through partners we can coordinate additional destinations on request.",
+      "In scope: employment visas, study and post-study routes, family and dependents, permanent residence and citizenship planning, investor and entrepreneur routes, visitor and short-stay, refusals and administrative reviews with licensed counsel where required.",
+      "Out of scope: asylum matters, detention or deportation defence, and large corporate mobility programs, since we focus on individuals and families."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Do you guarantee approvals?",
+    "answer": [
+      "No. Visa decisions belong to government authorities. Our job is to maximise the quality and compliance of your application.",
+      "How we improve outcomes:",
+      "• Evidence mapping to current rules and policy guidance.",
+      "• Dual quality checks before submission to catch gaps and inconsistencies.",
+      "• Early risk flags with practical alternatives where appropriate.",
+      "• Interview preparation when an interview is required.",
+      "If you receive a refusal, we reassess options and, where the law requires, coordinate an appeal or administrative review with licensed local counsel."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Are you a law firm, and when would a lawyer be involved?",
+    "answer": [
+      "We are an immigration consulting practice. Many applications do not require formal legal representation. If your matter does require it, for example certain appeals or specific jurisdictions, we coordinate with licensed local counsel and remain your day-to-day case manager.",
+      "You will receive counsel terms and fees separately and can approve them before any work begins."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What exactly is included in your services for individuals?",
+    "answer": [
+      "• Skilled Worker and Employment: mapping your role to an eligible category, employer letter templates, salary and threshold checks, forms, filing, and renewals.",
+      "• Study and Graduate: statements of purpose and intent, financial evidence planning, alignment with CAS or LOA, and post-study pathways.",
+      "• Family and Dependents: eligibility for spouse, partner, or children, relationship evidence guidance, and sequencing for principal and dependents.",
+      "• Permanent Residence and Citizenship: points or eligibility audit, document harvesting plan, background checks guidance, and form completion.",
+      "• Investor and Entrepreneur: business plan support, source-of-funds documentation, and company setup coordination where needed.",
+      "• Visitor and Short-Stay: purpose evidence for meetings, training, conferences, or tourism, proof of ties to home country, itinerary and funds.",
+      "• Appeals and Complex: decision analysis, new evidence strategy, and counsel coordination where required."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "How are your fees structured, and what costs are not included?",
+    "answer": [
+      "We use transparent, stage-based fees so you only pay for work that is performed.",
+      "Typical stages:",
+      "• Strategy and eligibility: route selection, timeline, and evidence plan.",
+      "• Document pack and forms: templates, completion, and quality checks.",
+      "• Submission and follow-through: lodging, booking of biometrics or VAC, interview preparation, and status updates.",
+      "• Post-decision: arrival checklists, local registrations where applicable, renewals.",
+      "Not included: government or consular fees, biometrics, medical exams, police certificates, certified translations, courier or shipping, travel insurance, and any lawyer fees if counsel must be engaged. These are quoted separately and, where possible, paid directly."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Can you handle my dependents at the same time?",
+    "answer": [
+      "Yes. We plan principal and dependents together to align timelines and ensure evidence supports the household as a whole.",
+      "What we usually request: marriage or partnership proof, birth or adoption certificates, consent letters if applicable, schooling details, and financial coverage for the combined family.",
+      "Dependents are often priced at a reduced add-on due to shared evidence and forms."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "Do you arrange translations, police certificates, and apostille or legalisation?",
+    "answer": [
+      "Yes. We provide certified translation guidance and vendors if needed, step-by-step instructions for obtaining police certificates, and advice on whether your documents require an apostille or consular legalisation based on destination and document origin.",
+      "We also verify names and dates across documents to prevent avoidable issues."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Do you help with job offers or university admissions?",
+    "answer": [
+      "We are not a recruiter or an admissions agency. Our role is to ensure the immigration requirements are satisfied.",
+      "For work visas: we advise employers on offer-letter content, role level and salary thresholds, and sponsorship steps.",
+      "For students: we review statements of purpose or intent, financial evidence, and visa documentation. Admissions decisions remain with the schools."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What if I have a previous refusal or an overstay?",
+    "answer": [
+      "We start with a decision analysis and a timeline of your immigration history. We then identify evidence gaps, credibility issues, and timing risks.",
+      "Options may include re-filing with stronger documentation, switching to a more suitable route, or pursuing an appeal or administrative review with licensed counsel where the law requires.",
+      "We will not recommend a path that we do not consider viable."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "How will we communicate, and what are your hours?",
+    "answer": [
+      "You will have a single point of contact by email and WhatsApp. Our UK office covers EMEA time zones, and our US office overlaps with Asia-Pacific hours in the evening Eastern Time.",
+      "Typical response time is 24 to 72 hours, with faster responses for time-sensitive steps such as appointments and biometrics."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "How is my data handled?",
+    "answer": [
+      "We follow a need-to-know approach, secure storage, and defined retention periods that align with your case and regulatory obligations.",
+      "Files are shared only with your consent and only with partners who are directly involved in your application.",
+      "You may request deletion of non-essential copies once the matter concludes, subject to legal and regulatory retention requirements."
+    ]
+  }
+]

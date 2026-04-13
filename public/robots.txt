@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Don't index admin/internal routes
+Disallow: /invoice/
+Disallow: /forms/
+
+Sitemap: https://somygo.com/sitemap.xml
