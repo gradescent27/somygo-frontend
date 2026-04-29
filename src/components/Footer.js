@@ -8,8 +8,8 @@
 // CTABanner so the two don't compete on the homepage. On inner pages where
 // CTABanner doesn't render, this CTA is the page's closing call to action.
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Linkedin,
   Instagram,
@@ -20,9 +20,9 @@ import {
   MapPin,
   Clock,
   ArrowRight,
-} from 'lucide-react';
-import { motion } from 'framer-motion';
-import whiteLogo from '../assets/white_logo.png';
+} from "lucide-react";
+import { motion } from "framer-motion";
+import whiteLogo from "../assets/white_logo.png";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -118,13 +118,22 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm font-light text-white/70">
               {[
-                ['Skilled Worker', '/services/skilled-worker-employment-visas'],
-                ['Study Permits', '/services/study-permits-graduate-pathways'],
-                ['Family Visas', '/services/family-and-dependent-visas'],
-                ['Permanent Residence', '/services/permanent-residence-and-citizenship'],
-                ['Investor Routes', '/services/investor-and-entrepreneur-routes'],
-                ['Visitor & Short-Stay', '/services/visitor-and-short-stay'],
-                ['Appeals & Complex Cases', '/services/appeals-and-complex-cases'],
+                ["Skilled Worker", "/services/skilled-worker-employment-visas"],
+                ["Study Permits", "/services/study-permits-graduate-pathways"],
+                ["Family Visas", "/services/family-and-dependent-visas"],
+                [
+                  "Permanent Residence",
+                  "/services/permanent-residence-and-citizenship",
+                ],
+                [
+                  "Investor Routes",
+                  "/services/investor-and-entrepreneur-routes",
+                ],
+                ["Visitor & Short-Stay", "/services/visitor-and-short-stay"],
+                [
+                  "Appeals & Complex Cases",
+                  "/services/appeals-and-complex-cases",
+                ],
               ].map(([label, route]) => (
                 <li key={route}>
                   <Link
@@ -145,13 +154,13 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm font-light text-white/70">
               {[
-                ['About us', '/about'],
-                ['How it works', '/how-it-works'],
-                ['Why Somygo', '/why-us'],
-                ['Contact', '/contact'],
-                ['Privacy Policy', '/privacy-policy'],
-                ['Terms of Service', '/terms-of-service'],
-                ['Cookie Policy', '/cookie-policy'],
+                ["About us", "/about"],
+                ["How it works", "/how-it-works"],
+                ["Why Somygo", "/why-us"],
+                ["Contact", "/contact"],
+                ["Privacy Policy", "/privacy-policy"],
+                ["Terms of Service", "/terms-of-service"],
+                ["Cookie Policy", "/cookie-policy"],
               ].map(([label, route]) => (
                 <li key={route}>
                   <Link
@@ -183,9 +192,7 @@ const Footer = () => {
                     className="mt-0.5 text-acGold flex-shrink-0"
                     strokeWidth={2}
                   />
-                  <span>
-                    42 Fords Park Road, London, England, E16 1NL
-                  </span>
+                  <span>42 Fords Park Road, London, England, E16 1NL</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone
@@ -215,9 +222,7 @@ const Footer = () => {
                     className="mt-0.5 text-acGold flex-shrink-0"
                     strokeWidth={2}
                   />
-                  <span>
-                    1 City Center, Portland, ME 04101
-                  </span>
+                  <span>1 City Center, Portland, ME 04101</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone
@@ -243,10 +248,10 @@ const Footer = () => {
             <Mail size={15} className="text-acGold" strokeWidth={2} />
             <span>General enquiries:</span>
             <a
-              href="mailto:info@somygo.com"
+              href="mailto:info@somygo.co"
               className="text-white hover:text-acGold transition-colors font-medium"
             >
-              info@somygo.com
+              info@somygo.co
             </a>
           </div>
           <div className="flex items-center gap-2 text-xs text-white/60">

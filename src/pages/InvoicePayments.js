@@ -80,7 +80,7 @@
 //       name: "Somygo",
 //       address: "42 Fords Park Road, London, England, E16 1NL",
 //       phone: "+44 (0)74 5742 4280",
-//       email: "info@somygo.com",
+//       email: "info@somygo.co",
 //     },
 //     services: [
 //       {
@@ -510,11 +510,6 @@
 
 // export default InvoicePayments;
 
-
-
-
-
-
 // OLD INVOICE THAT IS WORKING
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -590,13 +585,13 @@ const InvoicePayments = () => {
         year: "numeric",
         month: "long",
         day: "numeric",
-      }
+      },
     ),
     company: {
       name: "Somygo",
       address: "42 Fords Park Road, London, England, E16 1NL",
       phone: "+44 (0)74 5742 4280",
-      email: "info@somygo.com",
+      email: "info@somygo.co",
     },
     services: [
       {
@@ -652,7 +647,7 @@ const InvoicePayments = () => {
       const submitResult = await apiService.submitPaymentRequest({
         fullName: formData.fullName.trim(),
         email: formData.email.toLowerCase().trim(),
-        phone: formData.phone || ''
+        phone: formData.phone || "",
       });
 
       const { requestId, flutterwaveConfig } = submitResult;
@@ -663,38 +658,38 @@ const InvoicePayments = () => {
         tx_ref: flutterwaveConfig.tx_ref,
         amount: flutterwaveConfig.amount,
         currency: flutterwaveConfig.currency,
-        payment_options: 'card',
+        payment_options: "card",
         customer: flutterwaveConfig.customer,
         customizations: flutterwaveConfig.customizations,
-        callback: async function(payment) {
-          console.log('Payment successful:', payment);
-          
+        callback: async function (payment) {
+          console.log("Payment successful:", payment);
+
           // Send payment data to backend
           try {
             await apiService.sendPaymentCallback(requestId, payment);
-            
+
             // Show success message
-            setSubmitStatus('success');
+            setSubmitStatus("success");
             setIsSubmitting(false);
-            
+
             // Optionally redirect to success page
             setTimeout(() => {
-              window.location.href = '/payment-success';
+              window.location.href = "/payment-success";
             }, 2000);
           } catch (callbackError) {
-            console.error('Error sending payment callback:', callbackError);
-            setSubmitStatus('error');
+            console.error("Error sending payment callback:", callbackError);
+            setSubmitStatus("error");
             setIsSubmitting(false);
           }
         },
-        onclose: function() {
+        onclose: function () {
           // User closed modal without completing payment
-          console.log('Payment modal closed');
+          console.log("Payment modal closed");
           setIsSubmitting(false);
-        }
+        },
       });
     } catch (error) {
-      console.error('Payment error:', error);
+      console.error("Payment error:", error);
       setSubmitStatus("error");
       setIsSubmitting(false);
     }

@@ -6,4 +6,4 @@ Allow: /
 Disallow: /invoice/
 Disallow: /forms/
 
-Sitemap: https://somygo.com/sitemap.xml
+Sitemap: https://somygo.co/sitemap.xml

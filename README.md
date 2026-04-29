@@ -2,7 +2,7 @@
 
 Immigration consulting website for individuals and families. Work, study, family, residency, investor, and visitor visas across the UK, US, Canada, European Union, Australia, and the UAE.
 
-**Live site:** [somygo.com](https://somygo.com)
+**Live site:** [somygo.co](https://somygo.co)
 **Legal entity:** S O Immigration Limited (08239985), trading as Somygo
 
 ## Quick start
@@ -21,18 +21,18 @@ npm run build
 
 ## Tech stack
 
-| Layer | Technology |
-|---|---|
-| Framework | React 18 + React Router 6 |
-| Styling | Tailwind CSS 3.4 (custom `ac*` tokens) |
-| Icons | Lucide React |
-| Animation | Framer Motion |
-| SEO | react-helmet + Puppeteer prerender |
-| Forms | Netlify Forms (contact page) |
-| Payments | Flutterwave inline checkout |
-| Hosting | Netlify |
-| Backend | Node.js/Express (multi-tenant, see below) |
-| Database | MongoDB via Mongoose |
+| Layer     | Technology                                |
+| --------- | ----------------------------------------- |
+| Framework | React 18 + React Router 6                 |
+| Styling   | Tailwind CSS 3.4 (custom `ac*` tokens)    |
+| Icons     | Lucide React                              |
+| Animation | Framer Motion                             |
+| SEO       | react-helmet + Puppeteer prerender        |
+| Forms     | Netlify Forms (contact page)              |
+| Payments  | Flutterwave inline checkout               |
+| Hosting   | Netlify                                   |
+| Backend   | Node.js/Express (multi-tenant, see below) |
+| Database  | MongoDB via Mongoose                      |
 
 ## Project structure
 
@@ -128,13 +128,13 @@ The prerender writes per-route HTML files (e.g., `build/services/canada/index.ht
 
 **Color tokens** (in [tailwind.config.js](tailwind.config.js)):
 
-| Token | Value | Role |
-|---|---|---|
-| `acblue` | `#021BAB` | Primary navy |
-| `acGold` | `#F5B800` | Accent (CTAs, highlights, eyebrows) |
-| `acBg` | `#EEF2FF` | Soft indigo wash background |
-| `acBlack` | `#131313` | Text dark |
-| `acGray` | `#7E7E7E` | Muted text |
+| Token     | Value     | Role                                |
+| --------- | --------- | ----------------------------------- |
+| `acblue`  | `#021BAB` | Primary navy                        |
+| `acGold`  | `#F5B800` | Accent (CTAs, highlights, eyebrows) |
+| `acBg`    | `#EEF2FF` | Soft indigo wash background         |
+| `acBlack` | `#131313` | Text dark                           |
+| `acGray`  | `#7E7E7E` | Muted text                          |
 
 **Design model:** Modeled after the Visora theme (Bravis Themes). Structure, layout patterns, typography hierarchy, and spacing rhythm are absorbed; code, images, and text are original. See CLAUDE.md for the full pattern catalogue.
 
@@ -142,22 +142,22 @@ The prerender writes per-route HTML files (e.g., `build/services/canada/index.ht
 
 **22 public routes** (prerendered + in sitemap):
 
-| Category | Routes |
-|---|---|
-| Marketing | `/`, `/about`, `/how-it-works`, `/why-us`, `/contact` |
-| Services (7) | `/services/skilled-worker-employment-visas`, `study-permits-graduate-pathways`, `family-and-dependent-visas`, `permanent-residence-and-citizenship`, `investor-and-entrepreneur-routes`, `visitor-and-short-stay`, `appeals-and-complex-cases` |
-| Countries (6) | `/countries/united-states`, `canada`, `united-kingdom`, `european-union`, `australia`, `uae` |
-| Legal (3) | `/terms-of-service`, `/privacy-policy`, `/cookie-policy` |
+| Category      | Routes                                                                                                                                                                                                                                         |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Marketing     | `/`, `/about`, `/how-it-works`, `/why-us`, `/contact`                                                                                                                                                                                          |
+| Services (7)  | `/services/skilled-worker-employment-visas`, `study-permits-graduate-pathways`, `family-and-dependent-visas`, `permanent-residence-and-citizenship`, `investor-and-entrepreneur-routes`, `visitor-and-short-stay`, `appeals-and-complex-cases` |
+| Countries (6) | `/countries/united-states`, `canada`, `united-kingdom`, `european-union`, `australia`, `uae`                                                                                                                                                   |
+| Legal (3)     | `/terms-of-service`, `/privacy-policy`, `/cookie-policy`                                                                                                                                                                                       |
 
 **Internal routes** (excluded from prerender, sitemap, and robots.txt):
 
-| Route | Purpose |
-|---|---|
-| `/invoice/payments` | Flutterwave payment flow |
-| `/invoice/manage` | Password-protected invoice dashboard |
-| `/invoice/catalog` | Catalog invoice page |
-| `/invoice/catalog/manage` | Catalog invoice dashboard |
-| `/forms/jndfe8939434ndfd` | Hidden form management |
+| Route                     | Purpose                              |
+| ------------------------- | ------------------------------------ |
+| `/invoice/payments`       | Flutterwave payment flow             |
+| `/invoice/manage`         | Password-protected invoice dashboard |
+| `/invoice/catalog`        | Catalog invoice page                 |
+| `/invoice/catalog/manage` | Catalog invoice dashboard            |
+| `/forms/jndfe8939434ndfd` | Hidden form management               |
 
 ## Backend
 
@@ -165,10 +165,10 @@ The backend is a **multi-tenant Node.js/Express server** at a separate repo (`kv
 
 ### API surfaces
 
-| Surface | Base URL | Endpoints | Purpose |
-|---|---|---|---|
-| Core | `http://localhost:5001/api/somygo` | 13 | Payment requests, users, automation, stats |
-| Catalog | `http://localhost:5001/api/somygo-catalog` | 6 | Products, catalog payments, mark-as-paid |
+| Surface | Base URL                                   | Endpoints | Purpose                                    |
+| ------- | ------------------------------------------ | --------- | ------------------------------------------ |
+| Core    | `http://localhost:5001/api/somygo`         | 13        | Payment requests, users, automation, stats |
+| Catalog | `http://localhost:5001/api/somygo-catalog` | 6         | Products, catalog payments, mark-as-paid   |
 
 ### Core payment endpoints (`/api/somygo`)
 
@@ -209,16 +209,16 @@ POST   /mark-as-paid/:id          Mark catalog invoice as paid
 
 ### Backend files (in kv_backend_latest)
 
-| File | Purpose |
-|---|---|
-| `models/somygoUserModel.js` | User schema → `somygousers` |
-| `models/somygoPaymentRequestModel.js` | Payment schema → `somygopaymentrequests` |
-| `routes/somygoRoutes.js` | Core route definitions |
-| `controllers/somygoController.js` | Core business logic |
-| `models/somygoCatalogPaymentRequestModel.js` | Catalog payment schema |
-| `routes/somygoCatalogRoutes.js` | Catalog route definitions |
-| `controllers/somygoCatalogController.js` | Catalog business logic |
-| `services/somygoCatalogAutomationService.js` | Catalog browser automation |
+| File                                         | Purpose                                  |
+| -------------------------------------------- | ---------------------------------------- |
+| `models/somygoUserModel.js`                  | User schema → `somygousers`              |
+| `models/somygoPaymentRequestModel.js`        | Payment schema → `somygopaymentrequests` |
+| `routes/somygoRoutes.js`                     | Core route definitions                   |
+| `controllers/somygoController.js`            | Core business logic                      |
+| `models/somygoCatalogPaymentRequestModel.js` | Catalog payment schema                   |
+| `routes/somygoCatalogRoutes.js`              | Catalog route definitions                |
+| `controllers/somygoCatalogController.js`     | Catalog business logic                   |
+| `services/somygoCatalogAutomationService.js` | Catalog browser automation               |
 
 ### Environment variables
 
@@ -228,7 +228,7 @@ SOMYGO_FLW_PUBLIC_KEY=FLWPUBK-...
 SOMYGO_FLW_SECRET_KEY=FLWSECK-...
 SOMYGO_PAYMENT_AMOUNT=65
 SOMYGO_PAYMENT_CURRENCY=USD
-SOMYGO_FROM_EMAIL=no-reply@somygo.com
+SOMYGO_FROM_EMAIL=no-reply@somygo.co
 SOMYGO_FROM_NAME=Somygo
 ```
 
@@ -245,25 +245,27 @@ Three updates required:
 Service pages and country pages are **data-driven**. The layout component is shared; only the data file is unique.
 
 **New service page:**
+
 1. Create `src/data/services/yourService.js` (copy an existing one as template)
 2. Create `src/pages/YourService.js` (8-line wrapper importing ServicePageLayout + data)
 3. Register the route (see "Adding a new page" above)
 
 **New country page:**
+
 1. Create `src/data/countries/yourCountry.js`
 2. Create `src/pages/YourCountry.js` (6-line wrapper importing CountryPageLayout + data)
 3. Register the route
 
 ## Key files
 
-| File | What it controls |
-|---|---|
-| [src/data/legal.js](src/data/legal.js) | Company entity, office addresses, phone numbers, role emails |
-| [src/seo.config.js](src/seo.config.js) | Per-page `<title>`, meta description, canonical URL |
-| [scripts/routes.js](scripts/routes.js) | Which routes get prerendered and sitemapped |
-| [src/constants.js](src/constants.js) | Backend API base URLs |
-| [src/config/api.js](src/config/api.js) | API service functions (payment, catalog) |
-| [tailwind.config.js](tailwind.config.js) | Color tokens, fonts, breakpoints |
+| File                                     | What it controls                                             |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| [src/data/legal.js](src/data/legal.js)   | Company entity, office addresses, phone numbers, role emails |
+| [src/seo.config.js](src/seo.config.js)   | Per-page `<title>`, meta description, canonical URL          |
+| [scripts/routes.js](scripts/routes.js)   | Which routes get prerendered and sitemapped                  |
+| [src/constants.js](src/constants.js)     | Backend API base URLs                                        |
+| [src/config/api.js](src/config/api.js)   | API service functions (payment, catalog)                     |
+| [tailwind.config.js](tailwind.config.js) | Color tokens, fonts, breakpoints                             |
 
 ## Documentation
 

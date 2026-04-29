@@ -30,7 +30,7 @@ All 22 public pages are built, in the navy + gold design system, with per-route 
 - [x] Germany & EU rebranded to European Union (EU) with EU flag
 - [x] Em dash cleanup (188 occurrences removed across 41 files)
 - [x] Legal entity confirmed: S O Immigration Limited, 08239985, 42 Fords Park Road, London E16 1NL
-- [x] Production domain confirmed: `somygo.com`
+- [x] Production domain confirmed: `somygo.co`
 - [x] `src/data/legal.js`: single source of truth for company entity, offices, emails
 - [x] Netlify Forms hidden HTML form in `public/index.html`
 - [x] `flag-icons` CSS imported for country flags
@@ -56,13 +56,14 @@ Add Somygo as a new tenant to the multi-tenant backend at `/Users/dacawave/Docum
 
 ### 2.1 Settings & foundation (build first, everything else depends on it)
 
-| # | Task | File | Status |
-|---|---|---|---|
-| 1 | Settings model (products, activeAutomation, companyInfo) | `models/somygoSettingsModel.js` | [x] |
-| 2 | Settings seed (populate products from visapat-products.json on first boot) | `utils/somygoSettingsSeed.js` | [x] |
-| 3 | Product loader (reads from MongoDB, replaces JSON file approach) | `utils/somygoProductLoader.js` | [x] |
+| #   | Task                                                                       | File                            | Status |
+| --- | -------------------------------------------------------------------------- | ------------------------------- | ------ |
+| 1   | Settings model (products, activeAutomation, companyInfo)                   | `models/somygoSettingsModel.js` | [x]    |
+| 2   | Settings seed (populate products from visapat-products.json on first boot) | `utils/somygoSettingsSeed.js`   | [x]    |
+| 3   | Product loader (reads from MongoDB, replaces JSON file approach)           | `utils/somygoProductLoader.js`  | [x]    |
 
 **Settings document shape:**
+
 ```js
 {
   activeAutomation: 'catlog',  // global: 'catlog' | 'bumpa' | 'stripe' | 'manual'
@@ -81,20 +82,21 @@ Add Somygo as a new tenant to the multi-tenant backend at `/Users/dacawave/Docum
     name: 'Somygo',
     address: '42 Fords Park Road, London, England, E16 1NL',
     phone: '+44 (0)75 3716 9698',
-    email: 'support@somygo.com'
+    email: 'support@somygo.co'
   }
 }
 ```
 
 ### 2.2 Automation layer
 
-| # | Task | File | Status |
-|---|---|---|---|
-| 4 | Automation dispatcher (reads activeAutomation from settings, routes to right service) | `services/somygoAutomationDispatcher.js` | [x] |
-| 5 | Catlog automation service (port from visapat as-is, no internal changes) | `services/somygoCatlogAutomationService.js` | [x] |
-| 6 | Bumpa automation service (stub with correct interface, not functional yet) | `services/somygoBumpaAutomationService.js` | [x] |
+| #   | Task                                                                                  | File                                        | Status |
+| --- | ------------------------------------------------------------------------------------- | ------------------------------------------- | ------ |
+| 4   | Automation dispatcher (reads activeAutomation from settings, routes to right service) | `services/somygoAutomationDispatcher.js`    | [x]    |
+| 5   | Catlog automation service (port from visapat as-is, no internal changes)              | `services/somygoCatlogAutomationService.js` | [x]    |
+| 6   | Bumpa automation service (stub with correct interface, not functional yet)            | `services/somygoBumpaAutomationService.js`  | [x]    |
 
 **Dispatcher pattern:**
+
 ```js
 // Controller calls:
 const checkoutUrl = await dispatch(paymentRequest);
@@ -109,14 +111,15 @@ const checkoutUrl = await dispatch(paymentRequest);
 
 ### 2.3 Catalog flow (`/api/somygo-catalog`)
 
-| # | Task | File | Mirrors | Status |
-|---|---|---|---|---|
-| 7 | Catalog payment request model (dynamic product IDs, `automationType` field) | `models/somygoCatalogPaymentRequestModel.js` | `visapatCatlogPaymentRequestModel.js` | [x] |
-| 8 | Catalog routes (products, payment-request, automate, status, list, mark-as-paid, settings) | `routes/somygoCatalogRoutes.js` | `visapatCatlogRoutes.js` | [x] |
-| 9 | Catalog controller (uses dispatcher, reads products from DB) | `controllers/somygoCatalogController.js` | `visapatCatlogController.js` | [x] |
-| 10 | Register in server.js | 2 lines in `server.js` | | [x] |
+| #   | Task                                                                                       | File                                         | Mirrors                               | Status |
+| --- | ------------------------------------------------------------------------------------------ | -------------------------------------------- | ------------------------------------- | ------ |
+| 7   | Catalog payment request model (dynamic product IDs, `automationType` field)                | `models/somygoCatalogPaymentRequestModel.js` | `visapatCatlogPaymentRequestModel.js` | [x]    |
+| 8   | Catalog routes (products, payment-request, automate, status, list, mark-as-paid, settings) | `routes/somygoCatalogRoutes.js`              | `visapatCatlogRoutes.js`              | [x]    |
+| 9   | Catalog controller (uses dispatcher, reads products from DB)                               | `controllers/somygoCatalogController.js`     | `visapatCatlogController.js`          | [x]    |
+| 10  | Register in server.js                                                                      | 2 lines in `server.js`                       |                                       | [x]    |
 
 **Endpoints:**
+
 ```
 # Public (no auth)
 GET    /products                  Returns enabled products from settings
@@ -136,23 +139,24 @@ GET    /payment-requests/:id/details   Full record with automation logs
 
 These routes are currently disabled in the frontend (`InvoicePayments.js` and `ManageInvoices.js` routes commented out in App.js). Build after the catalog flow is working.
 
-| # | Task | File | Mirrors | Status |
-|---|---|---|---|---|
-| 11 | User model | `models/somygoUserModel.js` | `visapathUserModel.js` | [ ] |
-| 12 | Payment request model | `models/somygoPaymentRequestModel.js` | `visapathPaymentRequestModel.js` | [ ] |
-| 13 | Routes | `routes/somygoRoutes.js` | `visapathRoutes.js` | [ ] |
-| 14 | Controller | `controllers/somygoController.js` | `visapathController.js` | [ ] |
-| 15 | Register in server.js | `app.use('/api/somygo', somygoRoutes)` | | [ ] |
-| 16 | Re-enable frontend routes in App.js | | | [ ] |
+| #   | Task                                | File                                   | Mirrors                          | Status |
+| --- | ----------------------------------- | -------------------------------------- | -------------------------------- | ------ |
+| 11  | User model                          | `models/somygoUserModel.js`            | `visapathUserModel.js`           | [ ]    |
+| 12  | Payment request model               | `models/somygoPaymentRequestModel.js`  | `visapathPaymentRequestModel.js` | [ ]    |
+| 13  | Routes                              | `routes/somygoRoutes.js`               | `visapathRoutes.js`              | [ ]    |
+| 14  | Controller                          | `controllers/somygoController.js`      | `visapathController.js`          | [ ]    |
+| 15  | Register in server.js               | `app.use('/api/somygo', somygoRoutes)` |                                  | [ ]    |
+| 16  | Re-enable frontend routes in App.js |                                        |                                  | [ ]    |
 
 ### 2.5 Environment variables
 
-| # | Task | Status |
-|---|---|---|
-| 17 | Add Somygo env vars to `.env` | [x] |
-| 18 | Add Somygo env vars to `.env.example` | [x] |
+| #   | Task                                  | Status |
+| --- | ------------------------------------- | ------ |
+| 17  | Add Somygo env vars to `.env`         | [x]    |
+| 18  | Add Somygo env vars to `.env.example` | [x]    |
 
 **Required variables:**
+
 ```bash
 # Admin
 SOMYGO_ADMIN_SECRET=PASSword123$
@@ -169,9 +173,9 @@ SOMYGO_BUMPA_API_KEY=
 SOMYGO_BUMPA_TARGET_URL=
 
 # Email
-SOMYGO_CATLOG_SENDER_EMAIL=no-reply@somygo.com
+SOMYGO_CATLOG_SENDER_EMAIL=no-reply@somygo.co
 SOMYGO_CATLOG_SENDER_NAME=Somygo
-SOMYGO_WELCOME_SENDER_EMAIL=emea@somygo.com
+SOMYGO_WELCOME_SENDER_EMAIL=emea@somygo.co
 SOMYGO_WELCOME_SENDER_NAME=Somygo | EMEA Office
 
 # Core payment (for Phase 2.4, not needed yet)
@@ -183,27 +187,27 @@ SOMYGO_PAYMENT_CURRENCY=USD
 
 ### 2.6 Frontend fixes (catalog pages)
 
-| # | Task | File | Status |
-|---|---|---|---|
-| 19 | Fix company info (use `src/data/legal.js` instead of hardcoded) | `InvoiceCatalog.js` | [x] |
-| 20 | Fix invoice number (use backend `_id` instead of random) | `InvoiceCatalog.js` | [x] |
-| 21 | Document phone manipulation pattern with code comment | `InvoiceCatalog.js` | [x] |
-| 22 | Change admin password to `PASSword123$` | `ManageCatlogInvoices.js` | [x] |
-| 23 | Add settings panel (automation switch, product editor, company info) | `ManageCatlogInvoices.js` | [x] |
-| 24 | Wire admin settings panel to `GET/PUT /api/somygo-catalog/settings` | `ManageCatlogInvoices.js` | [x] |
+| #   | Task                                                                 | File                      | Status |
+| --- | -------------------------------------------------------------------- | ------------------------- | ------ |
+| 19  | Fix company info (use `src/data/legal.js` instead of hardcoded)      | `InvoiceCatalog.js`       | [x]    |
+| 20  | Fix invoice number (use backend `_id` instead of random)             | `InvoiceCatalog.js`       | [x]    |
+| 21  | Document phone manipulation pattern with code comment                | `InvoiceCatalog.js`       | [x]    |
+| 22  | Change admin password to `PASSword123$`                              | `ManageCatlogInvoices.js` | [x]    |
+| 23  | Add settings panel (automation switch, product editor, company info) | `ManageCatlogInvoices.js` | [x]    |
+| 24  | Wire admin settings panel to `GET/PUT /api/somygo-catalog/settings`  | `ManageCatlogInvoices.js` | [x]    |
 
 ### 2.7 End-to-end verification
 
-| # | Task | Status |
-|---|---|---|
-| 25 | Start backend (`npm run dev` in kv_backend_latest) | [ ] |
-| 26 | Start frontend (`npm start` in SOMYGO) | [ ] |
-| 27 | Verify `GET /api/somygo-catalog/products` returns seeded products | [ ] |
-| 28 | Test invoice page: `http://localhost:3000/invoice/catalog?name=John+Doe&email=john@example.com&invoice=1` | [ ] |
-| 29 | Test checkout flow with Catlog automation | [ ] |
-| 30 | Test admin dashboard: login, view invoices, mark as paid | [ ] |
-| 31 | Test admin settings: switch automation, edit product, update company info | [ ] |
-| 32 | Test automation switch: change to bumpa (should fail gracefully with "not implemented"), switch back to catlog | [ ] |
+| #   | Task                                                                                                           | Status |
+| --- | -------------------------------------------------------------------------------------------------------------- | ------ |
+| 25  | Start backend (`npm run dev` in kv_backend_latest)                                                             | [ ]    |
+| 26  | Start frontend (`npm start` in SOMYGO)                                                                         | [ ]    |
+| 27  | Verify `GET /api/somygo-catalog/products` returns seeded products                                              | [ ]    |
+| 28  | Test invoice page: `http://localhost:3000/invoice/catalog?name=John+Doe&email=john@example.com&invoice=1`      | [ ]    |
+| 29  | Test checkout flow with Catlog automation                                                                      | [ ]    |
+| 30  | Test admin dashboard: login, view invoices, mark as paid                                                       | [ ]    |
+| 31  | Test admin settings: switch automation, edit product, update company info                                      | [ ]    |
+| 32  | Test automation switch: change to bumpa (should fail gracefully with "not implemented"), switch back to catlog | [ ]    |
 
 ### Decisions locked for Phase 2
 
@@ -223,13 +227,14 @@ SOMYGO_PAYMENT_CURRENCY=USD
 
 Add Somygo-branded email templates and sender for transactional emails.
 
-| # | Task | File to create | Mirrors | Status |
-|---|---|---|---|---|
-| 1 | Email templates | `utils/somygoEmailTemplates.js` | Pattern from `utils/notaEmailTemplates.js` | [ ] |
-| 2 | Email sender | `utils/somygoSendEmail.js` | Pattern from `utils/notaSendEmail.js` | [ ] |
-| 3 | Wire into controller | Update `somygoController.js` to send receipts | | [ ] |
+| #   | Task                 | File to create                                | Mirrors                                    | Status |
+| --- | -------------------- | --------------------------------------------- | ------------------------------------------ | ------ |
+| 1   | Email templates      | `utils/somygoEmailTemplates.js`               | Pattern from `utils/notaEmailTemplates.js` | [ ]    |
+| 2   | Email sender         | `utils/somygoSendEmail.js`                    | Pattern from `utils/notaSendEmail.js`      | [ ]    |
+| 3   | Wire into controller | Update `somygoController.js` to send receipts |                                            | [ ]    |
 
 **Templates needed:**
+
 - Payment receipt / confirmation
 - Payment failed notification
 - Welcome email (first payment)
@@ -240,28 +245,28 @@ Add Somygo-branded email templates and sender for transactional emails.
 
 Builds on the per-route prerendering from Phase 1. Extend `<SEO />` and `seo.config.js`.
 
-| # | Task | Status |
-|---|---|---|
-| 1 | Open Graph meta tags (WhatsApp, Slack, iMessage link previews) | [ ] |
-| 2 | Twitter Card meta tags | [ ] |
-| 3 | Social sharing image (1200x630px asset needed) | [ ] |
-| 4 | JSON-LD: `Organization` / `LegalService` schema (Google knowledge panel) | [ ] |
-| 5 | JSON-LD: `LocalBusiness` for London + NYC offices (Google Maps, "near me") | [ ] |
-| 6 | JSON-LD: `Service` schema on each service page | [ ] |
-| 7 | JSON-LD: `FAQPage` schema on homepage FAQ (collapsible FAQ in search results) | [ ] |
-| 8 | JSON-LD: `BreadcrumbList` schema (breadcrumbs in search results) | [ ] |
+| #   | Task                                                                          | Status |
+| --- | ----------------------------------------------------------------------------- | ------ |
+| 1   | Open Graph meta tags (WhatsApp, Slack, iMessage link previews)                | [ ]    |
+| 2   | Twitter Card meta tags                                                        | [ ]    |
+| 3   | Social sharing image (1200x630px asset needed)                                | [ ]    |
+| 4   | JSON-LD: `Organization` / `LegalService` schema (Google knowledge panel)      | [ ]    |
+| 5   | JSON-LD: `LocalBusiness` for London + NYC offices (Google Maps, "near me")    | [ ]    |
+| 6   | JSON-LD: `Service` schema on each service page                                | [ ]    |
+| 7   | JSON-LD: `FAQPage` schema on homepage FAQ (collapsible FAQ in search results) | [ ]    |
+| 8   | JSON-LD: `BreadcrumbList` schema (breadcrumbs in search results)              | [ ]    |
 
 ---
 
 ## Phase 5: SEO Phase 3 (cleanup)
 
-| # | Task | Status |
-|---|---|---|
-| 1 | Audit semantic HTML and heading hierarchy across all pages | [ ] |
-| 2 | Audit and improve image alt text | [ ] |
-| 3 | Verify `lang` attribute correctness | [ ] |
-| 4 | Lighthouse performance pass (Core Web Vitals) | [ ] |
-| 5 | hero.png optimization (currently 4.6 MB, needs compression) | [ ] |
+| #   | Task                                                        | Status |
+| --- | ----------------------------------------------------------- | ------ |
+| 1   | Audit semantic HTML and heading hierarchy across all pages  | [ ]    |
+| 2   | Audit and improve image alt text                            | [ ]    |
+| 3   | Verify `lang` attribute correctness                         | [ ]    |
+| 4   | Lighthouse performance pass (Core Web Vitals)               | [ ]    |
+| 5   | hero.png optimization (currently 4.6 MB, needs compression) | [ ]    |
 
 ---
 
@@ -281,7 +286,7 @@ These have been discussed, decided, and should not be revisited without good rea
 - **Stats counter**: `X+` placeholders until real numbers exist.
 - **Office locations**: London (UK/EMEA) + New York (US/APAC). Single source of truth: `src/data/legal.js`.
 - **Legal entity**: S O Immigration Limited (08239985), 42 Fords Park Road, London E16 1NL.
-- **Production domain**: `somygo.com` (confirmed).
+- **Production domain**: `somygo.co` (confirmed).
 - **Backend approach**: mirror VISAPAT implementation, review first, then improve. 5 specific improvements listed in Phase 2.4.
 - **No em dashes** in copy or comments. Use commas, colons, parentheses, or sentence breaks.
 

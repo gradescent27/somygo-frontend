@@ -8,49 +8,49 @@
 
 export const LEGAL_ENTITY = {
   // Display name for the registered company
-  name: 'S O Immigration Limited',
+  name: "S O Immigration Limited",
   // Trading name (the consumer-facing brand)
-  tradingAs: 'Somygo',
+  tradingAs: "Somygo",
   // Companies House number
-  companyNumber: '08239985',
+  companyNumber: "08239985",
   // Registered office (legal correspondence address)
-  registeredAddress: '42 Fords Park Road, London, England, E16 1NL',
+  registeredAddress: "42 Fords Park Road, London, England, E16 1NL",
   // Country of incorporation
-  jurisdiction: 'England & Wales',
+  jurisdiction: "England & Wales",
   // ISO country code for the jurisdiction (for any flag rendering)
-  jurisdictionIso: 'gb',
+  jurisdictionIso: "gb",
 };
 
 // UK / EMEA operating office (currently same as registered office,
 // see CLAUDE.md "Office locations" for the operating-vs-registered
 // office decision).
 export const UK_OFFICE = {
-  region: 'United Kingdom · EMEA',
-  cityShort: 'UK Office',
-  address: '42 Fords Park Road, London, England, E16 1NL',
-  phone: '+44 (0)74 5742 4280',
-  phoneHref: 'tel:+4407457424280',
-  email: 'info@somygo.com',
-  hours: 'Mon–Fri, 09:00–18:00 GMT/BST',
+  region: "United Kingdom · EMEA",
+  cityShort: "UK Office",
+  address: "42 Fords Park Road, London, England, E16 1NL",
+  phone: "+44 (0)74 5742 4280",
+  phoneHref: "tel:+4407457424280",
+  email: "info@somygo.co",
+  hours: "Mon–Fri, 09:00–18:00 GMT/BST",
 };
 
 // US / APAC operating office.
 export const US_OFFICE = {
-  region: 'United States · APAC',
-  cityShort: 'US Office',
-  address: '1 City Center, Portland, ME 04101',
-  phone: '+1 (321) 220-7399',
-  phoneHref: 'tel:+13212207399',
-  email: 'info@somygo.com',
-  hours: 'Mon–Fri, 09:00–18:00 ET (with evening overlap for APAC)',
+  region: "United States · APAC",
+  cityShort: "US Office",
+  address: "1 City Center, Portland, ME 04101",
+  phone: "+1 (321) 220-7399",
+  phoneHref: "tel:+13212207399",
+  email: "info@somygo.co",
+  hours: "Mon–Fri, 09:00–18:00 ET (with evening overlap for APAC)",
 };
 
-// Role-based emails, all @somygo.com
+// Role-based emails, all @somygo.co
 export const ROLE_EMAILS = {
-  general: 'info@somygo.com',
-  privacy: 'privacy@somygo.com',
-  legal: 'legal@somygo.com',
-  billing: 'billing@somygo.com',
-  complaints: 'complaints@somygo.com',
-  support: 'support@somygo.com',
+  general: "info@somygo.co",
+  privacy: "privacy@somygo.co",
+  legal: "legal@somygo.co",
+  billing: "billing@somygo.co",
+  complaints: "complaints@somygo.co",
+  support: "support@somygo.co",
 };

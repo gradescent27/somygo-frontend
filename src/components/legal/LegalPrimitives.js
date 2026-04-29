@@ -12,10 +12,15 @@
 //   <Callout />                 highlighted info/warning box
 //   <DefinitionList />          definition list for "Definitions" sections
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Building, Mail, MapPin } from 'lucide-react';
-import { LEGAL_ENTITY, UK_OFFICE, US_OFFICE, ROLE_EMAILS } from '../../data/legal';
+import React from "react";
+import { motion } from "framer-motion";
+import { Building, Mail, MapPin } from "lucide-react";
+import {
+  LEGAL_ENTITY,
+  UK_OFFICE,
+  US_OFFICE,
+  ROLE_EMAILS,
+} from "../../data/legal";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -68,13 +73,13 @@ export const LegalHero = ({ eyebrow, title, effectiveDate, lastUpdated }) => (
         >
           {effectiveDate && (
             <span>
-              <strong className="text-acBlack">Effective:</strong>{' '}
+              <strong className="text-acBlack">Effective:</strong>{" "}
               {effectiveDate}
             </span>
           )}
           {lastUpdated && (
             <span>
-              <strong className="text-acBlack">Last updated:</strong>{' '}
+              <strong className="text-acBlack">Last updated:</strong>{" "}
               {lastUpdated}
             </span>
           )}
@@ -103,8 +108,7 @@ export const LegalEntityCard = () => (
               Who We Are
             </div>
             <h2 className="text-xl md:text-2xl font-bold font-inter text-acBlack leading-snug">
-              {LEGAL_ENTITY.tradingAs} is a trading name of{' '}
-              {LEGAL_ENTITY.name}
+              {LEGAL_ENTITY.tradingAs} is a trading name of {LEGAL_ENTITY.name}
             </h2>
           </div>
         </div>
@@ -140,7 +144,7 @@ export const LegalEntityCard = () => (
             <dt className="font-semibold text-acBlack sm:w-44 flex-shrink-0">
               Website
             </dt>
-            <dd>somygo.com</dd>
+            <dd>somygo.co</dd>
           </div>
         </dl>
       </motion.div>
@@ -157,13 +161,8 @@ export const LegalEntityCard = () => (
  *   tone       'default' | 'alt'   alt = soft acBg background, default = white
  *   children   the section body
  */
-export const LegalSection = ({
-  number,
-  title,
-  tone = 'default',
-  children,
-}) => {
-  const bg = tone === 'alt' ? 'bg-acBg' : 'bg-white';
+export const LegalSection = ({ number, title, tone = "default", children }) => {
+  const bg = tone === "alt" ? "bg-acBg" : "bg-white";
   return (
     <section className={`${bg} py-12 md:py-16 px-6`}>
       <div className="max-w-4xl mx-auto">
@@ -193,12 +192,12 @@ export const LegalSection = ({
  * Props:
  *   tone   'info' | 'warning' | 'success' | 'note'
  */
-export const Callout = ({ tone = 'info', children }) => {
+export const Callout = ({ tone = "info", children }) => {
   const tones = {
-    info: 'bg-acblue/5 border-acblue/30 text-acBlack',
-    warning: 'bg-acGold/10 border-acGold/40 text-acBlack',
-    success: 'bg-green-50 border-green-200 text-green-900',
-    note: 'bg-acBg border-gray-200 text-acBlack',
+    info: "bg-acblue/5 border-acblue/30 text-acBlack",
+    warning: "bg-acGold/10 border-acGold/40 text-acBlack",
+    success: "bg-green-50 border-green-200 text-green-900",
+    note: "bg-acBg border-gray-200 text-acBlack",
   };
   return (
     <div
@@ -240,7 +239,7 @@ export const DefinitionList = ({ items = [] }) => (
  */
 export const LegalContactBlock = ({
   primaryEmail = ROLE_EMAILS.legal,
-  primaryLabel = 'Legal contact',
+  primaryLabel = "Legal contact",
 }) => (
   <section className="bg-white py-16 md:py-20 px-6">
     <div className="max-w-4xl mx-auto">

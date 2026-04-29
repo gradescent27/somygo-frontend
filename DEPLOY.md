@@ -17,6 +17,7 @@ export const BASE_URL = "https://your-backend-server.com/api/somygo";
 ```
 
 This is the same pattern VISAPAT uses. The backend routes are:
+
 - `/api/somygo/contact` (contact form)
 - `/api/somygo-catalog/*` (products, payments, settings, automation)
 
@@ -28,8 +29,8 @@ Both are built from `SERVER_BASE_URL` in [src/config/api.js](src/config/api.js).
 
 The admin dashboard at `/invoice/manage` uses a hardcoded password.
 
-| File | Current value | Action |
-|---|---|---|
+| File                                                                      | Current value  | Action                      |
+| ------------------------------------------------------------------------- | -------------- | --------------------------- |
 | [src/pages/ManageCatlogInvoices.js:12](src/pages/ManageCatlogInvoices.js) | `PASSword123$` | Change to a strong password |
 
 This must match the `SOMYGO_ADMIN_SECRET` env var on the backend.
@@ -38,13 +39,13 @@ This must match the `SOMYGO_ADMIN_SECRET` env var on the backend.
 
 ## 3. Domain and SEO
 
-Already set to `somygo.com`. Verify before deploy:
+Already set to `somygo.co`. Verify before deploy:
 
-| File | Value |
-|---|---|
-| [src/seo.config.js:13](src/seo.config.js) | `domain: 'https://somygo.com'` |
-| [scripts/generate-sitemap.js:20](scripts/generate-sitemap.js) | `SITE_DOMAIN = 'https://somygo.com'` |
-| [public/robots.txt](public/robots.txt) | `Sitemap: https://somygo.com/sitemap.xml` |
+| File                                                          | Value                                    |
+| ------------------------------------------------------------- | ---------------------------------------- |
+| [src/seo.config.js:13](src/seo.config.js)                     | `domain: 'https://somygo.co'`            |
+| [scripts/generate-sitemap.js:20](scripts/generate-sitemap.js) | `SITE_DOMAIN = 'https://somygo.co'`      |
+| [public/robots.txt](public/robots.txt)                        | `Sitemap: https://somygo.co/sitemap.xml` |
 
 All three must match.
 
@@ -54,11 +55,11 @@ All three must match.
 
 Replace with real Somygo logo assets:
 
-| File | Where used |
-|---|---|
+| File                        | Where used           |
+| --------------------------- | -------------------- |
 | `src/assets/black_logo.png` | Header, invoice page |
-| `src/assets/white_logo.png` | Footer |
-| `public/logo.png` | Browser tab favicon |
+| `src/assets/white_logo.png` | Footer               |
+| `public/logo.png`           | Browser tab favicon  |
 
 ---
 
@@ -78,11 +79,11 @@ Target: under 500 KB.
 
 All three legal pages show `Effective date: 02 May 2024`. Update to the actual publish date:
 
-| File | Props to change |
-|---|---|
+| File                                       | Props to change                                    |
+| ------------------------------------------ | -------------------------------------------------- |
 | [src/pages/Policy.js](src/pages/Policy.js) | `effectiveDate` and `lastUpdated` on `<LegalHero>` |
-| [src/pages/Terms.js](src/pages/Terms.js) | Same |
-| [src/pages/Cookie.js](src/pages/Cookie.js) | Same |
+| [src/pages/Terms.js](src/pages/Terms.js)   | Same                                               |
+| [src/pages/Cookie.js](src/pages/Cookie.js) | Same                                               |
 
 ---
 
@@ -94,11 +95,13 @@ npm run build
 ```
 
 The build pipeline:
+
 1. `prebuild`: generates `public/sitemap.xml`
 2. `build`: CRA production build
 3. `postbuild`: Puppeteer prerenders all 22 public routes for SEO
 
 **Netlify config** ([netlify.toml](netlify.toml)):
+
 ```toml
 [build]
   command = "npm run build"
@@ -117,10 +120,10 @@ First build will be slower (~2 min) because Puppeteer downloads Chromium.
 
 ## 8. DNS and SSL
 
-1. Add custom domain `somygo.com` in Netlify site settings
+1. Add custom domain `somygo.co` in Netlify site settings
 2. Point DNS to Netlify (CNAME or A record)
 3. Enable HTTPS (Netlify provisions Let's Encrypt automatically)
-4. Add `www.somygo.com` redirect
+4. Add `www.somygo.co` redirect
 
 ---
 
@@ -142,9 +145,9 @@ SOMYGO_CATLOG_OXYLABS_TARGET_COUNTRY=US
 # Email
 SOMYGO_CATLOG_SENDER_EMAIL=no-reply@yourdomain.com
 SOMYGO_CATLOG_SENDER_NAME=Somygo
-SOMYGO_WELCOME_SENDER_EMAIL=info@somygo.com
+SOMYGO_WELCOME_SENDER_EMAIL=info@somygo.co
 SOMYGO_WELCOME_SENDER_NAME=Somygo
-SOMYGO_CONTACT_RECIPIENT=info@somygo.com
+SOMYGO_CONTACT_RECIPIENT=info@somygo.co
 ```
 
 The shared `EMAIL_TOKEN` (ZeptoMail API key) is already configured on the backend for other tenants.
@@ -161,5 +164,5 @@ The shared `EMAIL_TOKEN` (ZeptoMail API key) is already configured on the backen
 [ ] Legal page dates updated
 [ ] Backend env vars set (see section 9)
 [ ] npm run build succeeds
-[ ] DNS configured for somygo.com
+[ ] DNS configured for somygo.co
 ```

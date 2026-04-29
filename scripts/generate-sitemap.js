@@ -13,18 +13,18 @@
  * changes. (It also lives in src/seo.config.js, keep both in sync.)
  */
 
-const fs = require('fs');
-const path = require('path');
-const { PUBLIC_ROUTES } = require('./routes');
+const fs = require("fs");
+const path = require("path");
+const { PUBLIC_ROUTES } = require("./routes");
 
-const SITE_DOMAIN = 'https://somygo.com';
-const OUTPUT = path.resolve(__dirname, '..', 'public', 'sitemap.xml');
+const SITE_DOMAIN = "https://somygo.co";
+const OUTPUT = path.resolve(__dirname, "..", "public", "sitemap.xml");
 
 // Routes that are duplicates pointing to a canonical elsewhere, don't
 // list them in the sitemap. Mirror these with the `canonical` field in
 // src/seo.config.js.
 const NON_CANONICAL_ROUTES = new Set([
-  '/services/skilled-worker-employment', // canonical: -visas
+  "/services/skilled-worker-employment", // canonical: -visas
 ]);
 
 function buildSitemap() {
@@ -35,7 +35,7 @@ function buildSitemap() {
       const loc = `${SITE_DOMAIN}${route}`;
       return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`;
     })
-    .join('\n');
+    .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -44,7 +44,7 @@ ${urls}
 `;
 }
 
-fs.writeFileSync(OUTPUT, buildSitemap(), 'utf-8');
+fs.writeFileSync(OUTPUT, buildSitemap(), "utf-8");
 console.log(
-  `[sitemap] Wrote ${PUBLIC_ROUTES.length - NON_CANONICAL_ROUTES.size} URLs to public/sitemap.xml`
+  `[sitemap] Wrote ${PUBLIC_ROUTES.length - NON_CANONICAL_ROUTES.size} URLs to public/sitemap.xml`,
 );

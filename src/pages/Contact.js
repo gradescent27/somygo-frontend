@@ -1,7 +1,7 @@
 // Contact.js
 //
 // Form submits to the backend (POST /api/somygo/contact) which emails the
-// enquiry to info@somygo.com. Netlify Forms hidden form in index.html is
+// enquiry to info@somygo.co. Netlify Forms hidden form in index.html is
 // kept as a backup capture but the primary path is the backend API.
 
 import React, { useState, useEffect } from "react";
@@ -61,27 +61,27 @@ const COUNTRIES = [
 const ROLE_EMAILS = [
   {
     title: "General enquiries",
-    email: "info@somygo.com",
+    email: "info@somygo.co",
     icon: Mail,
   },
   {
     title: "Privacy & data",
-    email: "privacy@somygo.com",
+    email: "privacy@somygo.co",
     icon: Shield,
   },
   {
     title: "Legal",
-    email: "legal@somygo.com",
+    email: "legal@somygo.co",
     icon: FileText,
   },
   {
     title: "Billing",
-    email: "billing@somygo.com",
+    email: "billing@somygo.co",
     icon: Receipt,
   },
   {
     title: "Complaints",
-    email: "complaints@somygo.com",
+    email: "complaints@somygo.co",
     icon: AlertCircle,
   },
 ];
@@ -205,14 +205,14 @@ const Contact = () => {
           </motion.p>
 
           <motion.a
-            href="mailto:info@somygo.com"
+            href="mailto:info@somygo.co"
             className="group inline-flex items-center gap-2 bg-acGold hover:bg-yellow-400 text-acBlack font-semibold px-7 py-4 rounded-full transition-all shadow-lg shadow-acGold/30"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Mail size={18} strokeWidth={2} />
-            Email info@somygo.com
+            Email info@somygo.co
           </motion.a>
         </div>
       </section>
@@ -639,10 +639,10 @@ const Contact = () => {
                       strokeWidth={2}
                     />
                     <a
-                      href="mailto:info@somygo.com"
+                      href="mailto:info@somygo.co"
                       className="hover:text-acblue transition-colors"
                     >
-                      info@somygo.com
+                      info@somygo.co
                     </a>
                   </div>
                 </div>
@@ -710,10 +710,10 @@ const Contact = () => {
                       strokeWidth={2}
                     />
                     <a
-                      href="mailto:info@somygo.com"
+                      href="mailto:info@somygo.co"
                       className="hover:text-acblue transition-colors"
                     >
-                      info@somygo.com
+                      info@somygo.co
                     </a>
                   </div>
                 </div>
@@ -731,7 +731,7 @@ export default Contact;
 // // Contact.js
 // //
 // // Form submits to the backend (POST /api/somygo/contact) which emails the
-// // enquiry to info@somygo.com. Netlify Forms hidden form in index.html is
+// // enquiry to info@somygo.co. Netlify Forms hidden form in index.html is
 // // kept as a backup capture but the primary path is the backend API.
 
 // import React, { useState, useEffect } from 'react';
@@ -779,27 +779,27 @@ export default Contact;
 // const ROLE_EMAILS = [
 //   {
 //     title: 'General enquiries',
-//     email: 'info@somygo.com',
+//     email: 'info@somygo.co',
 //     icon: Mail,
 //   },
 //   {
 //     title: 'Privacy & data',
-//     email: 'privacy@somygo.com',
+//     email: 'privacy@somygo.co',
 //     icon: Shield,
 //   },
 //   {
 //     title: 'Legal',
-//     email: 'legal@somygo.com',
+//     email: 'legal@somygo.co',
 //     icon: FileText,
 //   },
 //   {
 //     title: 'Billing',
-//     email: 'billing@somygo.com',
+//     email: 'billing@somygo.co',
 //     icon: Receipt,
 //   },
 //   {
 //     title: 'Complaints',
-//     email: 'complaints@somygo.com',
+//     email: 'complaints@somygo.co',
 //     icon: AlertCircle,
 //   },
 // ];
@@ -1312,10 +1312,10 @@ export default Contact;
 //                   <div className="flex items-center gap-2">
 //                     <Mail size={14} className="text-acGold flex-shrink-0" strokeWidth={2} />
 //                     <a
-//                       href="mailto:info@somygo.com"
+//                       href="mailto:info@somygo.co"
 //                       className="hover:text-acblue transition-colors"
 //                     >
-//                       info@somygo.com
+//                       info@somygo.co
 //                     </a>
 //                   </div>
 //                 </div>
@@ -1369,10 +1369,10 @@ export default Contact;
 //                   <div className="flex items-center gap-2">
 //                     <Mail size={14} className="text-acGold flex-shrink-0" strokeWidth={2} />
 //                     <a
-//                       href="mailto:info@somygo.com"
+//                       href="mailto:info@somygo.co"
 //                       className="hover:text-acblue transition-colors"
 //                     >
-//                       info@somygo.com
+//                       info@somygo.co
 //                     </a>
 //                   </div>
 //                 </div>
